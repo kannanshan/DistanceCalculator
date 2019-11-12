@@ -6,7 +6,7 @@
  * @version : 1.0
  */
 
-package com.intercom.app.input;
+package com.intercom.app.input.reader;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

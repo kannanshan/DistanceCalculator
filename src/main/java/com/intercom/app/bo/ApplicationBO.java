@@ -13,9 +13,9 @@ import java.util.Collections;
 import java.util.List;
 
 import com.intercom.app.common.CommonUtils;
-import com.intercom.app.input.CommandLineReader;
-import com.intercom.app.input.Reader;
-import com.intercom.app.input.ReaderFactory;
+import com.intercom.app.input.reader.CommandLineReader;
+import com.intercom.app.input.reader.Reader;
+import com.intercom.app.input.reader.ReaderFactory;
 import com.intercom.app.output.format.OutputFormatter;
 import com.intercom.app.output.writer.Writer;
 import com.intercom.app.output.writer.WriterFactory;

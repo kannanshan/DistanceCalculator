@@ -9,9 +9,9 @@
 package com.intercom.app.output.writer;
 
 import com.intercom.app.constants.AppConstants;
-import com.intercom.app.input.CommandLineReader;
-import com.intercom.app.input.FileReader;
-import com.intercom.app.input.Reader;
+import com.intercom.app.input.reader.CommandLineReader;
+import com.intercom.app.input.reader.FileReader;
+import com.intercom.app.input.reader.Reader;
 
 public class WriterFactory {
 	
