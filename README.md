@@ -15,6 +15,11 @@ Installation :
 		Install java 1.5 and above.
 		Install latest maven. 
 	Steps to install:
+		Download the github code from the repo https://github.com/kannanshan/DistanceCalculator.git
+		Move to the repo folder with the following command . "cd DistanceCalculator"
+		Build the project using maven. Output will be a jar file located inside the target folder . "mvn clean install"
+		Copy the jar file
+		
 		
 	
 
