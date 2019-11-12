@@ -24,6 +24,7 @@ public class InputVO {
 		outputType = AppConstants.WRITER_TYPE.FILE.getWriterId();
 		inputType = AppConstants.READER_TYPE.FILE.getReaderId();
 		sortParameter = AppConstants.SORT_PARMETER.USER_ID.getParameterId();
+		workingDirectory="";
 		sortOrder = true;
 	}
 

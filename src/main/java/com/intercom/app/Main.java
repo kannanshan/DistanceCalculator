@@ -21,9 +21,9 @@ public class Main {
 	 */
 	public static void main(String args[]) {
 		try {
-			// String s = "-d 100 -s 53.339428 -6.257664 -sr desc -sp id -i file -o command_line -w /Users/Kannan/Desktop";
+			 String s = "-d 100 -s 53.339428 -6.257664 -sr desc -sp id -i file -o file";
 			//String s = "-h -y 6";
-			//args = s.split(" ");
+			args = s.split(" ");
 			if (args.length == 1 && args[0].equalsIgnoreCase("-h"))
 				System.out.println(AppConstants.HELP_MESSAGE);
 			else {

@@ -28,28 +28,28 @@ public class FileReader extends Reader {
 	 * @return
 	 */
 	@Override
-	public List<CustomerVO> readInput(InputVO inputVO) throws InvalidInputException,IOException {
+	public List<CustomerVO> readInput(InputVO inputVO) throws InvalidInputException, IOException {
 		List<CustomerVO> inputList = new ArrayList();
 		BufferedReader reader = null;
 		CustomerVO tempCustomerVO = null;
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
-			reader = new BufferedReader(new java.io.FileReader(inputVO.getWorkingDirectory() + "/input.txt"));
+			reader = new BufferedReader(new java.io.FileReader(inputVO.getWorkingDirectory() + "input.txt"));
 			String line = reader.readLine();
 			while (line != null) {
 				tempCustomerVO = objectMapper.readValue(line, CustomerVO.class);
 				inputList.add(tempCustomerVO);
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (JsonParseException ex) {
-			reader.close();
 			throw new InvalidInputException(
-					"Invalid customer data format. Please make sure the inputs are in proper json format. \n Please find the sample: \"{\"latitude\": \"52.986375\", \"user_id\": 12, \"name\": \"Christina McArdle\", \"longitude\": \"-6.043701\"}\"");
+					"Invalid customer data format. Please make sure the inputs are in proper json format. \nPlease find the sample: \"{\"latitude\": \"52.986375\", \"user_id\": 12, \"name\": \"Christina McArdle\", \"longitude\": \"-6.043701\"}\"");
 		} catch (FileNotFoundException e) {
-			reader.close();
 			throw new InvalidInputException(
 					"Input file not found. Please check the working directory and the file with name input.txt");
+		} finally {
+			if (reader != null)
+				reader.close();
 		}
 		return inputList;
 	}

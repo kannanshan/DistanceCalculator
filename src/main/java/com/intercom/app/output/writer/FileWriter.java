@@ -26,20 +26,21 @@ public class FileWriter extends Writer {
 	 * @throws Exception
 	 */
 	@Override
-	public void writeOutput(List<CustomerVO> outputList, InputVO inputVO) throws InvalidInputException,IOException {
+	public void writeOutput(List<CustomerVO> outputList, InputVO inputVO) throws InvalidInputException, IOException {
 		BufferedWriter writer = null;
 		if (outputList.size() != 0) {
 			try {
-				writer = new BufferedWriter(new java.io.FileWriter(inputVO.getWorkingDirectory() + "/output.txt"));
+				writer = new BufferedWriter(new java.io.FileWriter(inputVO.getWorkingDirectory() + "output.txt"));
 				for (CustomerVO customerVO : outputList) {
 					writer.write(customerVO.toString());
 					writer.newLine();
 				}
-				writer.close();
 			} catch (FileNotFoundException e) {
-				writer.close();
 				throw new InvalidInputException(
 						"Output file not found. Please check the working directory value is proper");
+			} finally {
+				if (writer != null)
+					writer.close();
 			}
 		} else {
 			writeOutput("No Customers are found within the given range", inputVO);
@@ -54,11 +55,11 @@ public class FileWriter extends Writer {
 	 * @throws Exception
 	 */
 	@Override
-	public void writeOutput(String message, InputVO inputVO) throws InvalidInputException,IOException {
+	public void writeOutput(String message, InputVO inputVO) throws InvalidInputException, IOException {
 		if (message != null) {
 			BufferedWriter writer = null;
 			try {
-				writer = new BufferedWriter(new java.io.FileWriter(inputVO.getWorkingDirectory() + "/output.txt"));
+				writer = new BufferedWriter(new java.io.FileWriter(inputVO.getWorkingDirectory() + "output.txt"));
 				writer.write(message);
 				writer.newLine();
 				writer.close();

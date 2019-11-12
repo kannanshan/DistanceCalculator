@@ -37,7 +37,7 @@ public class CommandLineReader extends Reader {
 		System.out.println("Enter the number of Customer. (Not more than 100):");
 		int objectCount = Integer.parseInt(scanner.nextLine());
 		try {
-			if (objectCount == 0 || objectCount > 100){
+			if (objectCount == 0 || objectCount > 100) {
 				scanner.close();
 				throw new InvalidInputException(
 						"Invalid inputs: Number of customer objects should be between 1 and 100");
@@ -50,11 +50,12 @@ public class CommandLineReader extends Reader {
 				tempCustomerVO = objectMapper.readValue(input, CustomerVO.class);
 				inputList.add(tempCustomerVO);
 			}
-			scanner.close();
 		} catch (JsonParseException ex) {
-			scanner.close();
 			throw new InvalidInputException(
 					"Invalid customer data format. Please make sure the inputs are in proper json format. \n Please find the sample: \"{\"latitude\": \"52.986375\", \"user_id\": 12, \"name\": \"Christina McArdle\", \"longitude\": \"-6.043701\"}\"");
+		} finally {
+			if (scanner != null)
+				scanner.close();
 		}
 		return inputList;
 	}
