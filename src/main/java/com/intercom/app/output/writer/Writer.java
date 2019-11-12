@@ -6,7 +6,7 @@
  * @version : 1.0
  */
 
-package com.intercom.app.output;
+package com.intercom.app.output.writer;
 
 import java.util.List;
 

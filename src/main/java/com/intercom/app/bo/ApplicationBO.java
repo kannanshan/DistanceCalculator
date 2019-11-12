@@ -16,9 +16,9 @@ import com.intercom.app.common.CommonUtils;
 import com.intercom.app.input.CommandLineReader;
 import com.intercom.app.input.Reader;
 import com.intercom.app.input.ReaderFactory;
-import com.intercom.app.output.OutputFormatter;
-import com.intercom.app.output.Writer;
-import com.intercom.app.output.WriterFactory;
+import com.intercom.app.output.format.OutputFormatter;
+import com.intercom.app.output.writer.Writer;
+import com.intercom.app.output.writer.WriterFactory;
 import com.intercom.app.vo.Coordinates;
 import com.intercom.app.vo.CustomerVO;
 
@@ -33,7 +33,8 @@ public class ApplicationBO {
 			Reader reader = ReaderFactory.getReaderObject(1);
 			inputList = reader.readInput();
 			outputList = getValidCustomerList(inputList, new Coordinates(53.339428, -6.257664), 100);
-			new OutputFormatter().format(outputList);
+			OutputFormatter formatter = new OutputFormatter();
+			formatter.format(outputList);
 			writer.writeOutput(outputList);
 		} catch (Exception ex) {
 			writer.writeOutput(ex.getMessage());
