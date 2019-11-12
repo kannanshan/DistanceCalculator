@@ -22,8 +22,8 @@ public class Main {
 	public static void main(String args[]) {
 		try {
 			 //String s = "-d 100 -s 53.339428 -6.257664 -sr desc -sp dis -i file -o command_line";
-			String s = "-h";
-			args = s.split(" ");
+			//String s = "-h";
+			//args = s.split(" ");
 			if (args.length == 1 && args[0].equalsIgnoreCase("-h"))
 				System.out.println(AppConstants.HELP_MESSAGE);
 			else {
@@ -36,7 +36,7 @@ public class Main {
 		} catch (InvalidInputException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
-			System.out.println("Something went wrong in our application");
+			System.out.println("Something went wrong in our application. Please reach out to kannanscse@gmail.com for any help");
 		}
 	}
 
