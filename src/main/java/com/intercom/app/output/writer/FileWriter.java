@@ -37,10 +37,9 @@ public class FileWriter extends Writer {
 				}
 				writer.close();
 			} catch (FileNotFoundException e) {
+				writer.close();
 				throw new InvalidInputException(
 						"Output file not found. Please check the working directory value is proper");
-			} finally {
-				writer.close();
 			}
 		} else {
 			writeOutput("No Customers are found within the given range", inputVO);

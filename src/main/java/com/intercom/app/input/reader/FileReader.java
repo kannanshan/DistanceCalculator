@@ -41,14 +41,15 @@ public class FileReader extends Reader {
 				inputList.add(tempCustomerVO);
 				line = reader.readLine();
 			}
+			reader.close();
 		} catch (JsonParseException ex) {
+			reader.close();
 			throw new InvalidInputException(
 					"Invalid customer data format. Please make sure the inputs are in proper json format. \n Please find the sample: \"{\"latitude\": \"52.986375\", \"user_id\": 12, \"name\": \"Christina McArdle\", \"longitude\": \"-6.043701\"}\"");
 		} catch (FileNotFoundException e) {
+			reader.close();
 			throw new InvalidInputException(
 					"Input file not found. Please check the working directory and the file with name input.txt");
-		} finally {
-			reader.close();
 		}
 		return inputList;
 	}

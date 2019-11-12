@@ -160,6 +160,8 @@ public class AppConstants {
 		}
 
 	}
+	
+	public static String HELP_MESSAGE = "distcal, version 1.1 \n \n usage: distcal [-h help]  [-d distance range in km] [-s latitude longitude] [-w working directory] [-so sorting order asc or desc] [-sp sorting parameter id or name] [-i inputtype file or command_line] [-o outputtype file or command_line] \n \n d : Distance range to be measured. The values are in Kilometers. data type : double \n s  : Source coordinates. The source is generally provided using latitude and longtidue in degrees. data type : double \n w  : Working directory.data type : String \n so : Sorting order. asc or desc. data type : String \n sp : Sorting parameter. id or name. data type : String \n i  : Input type. file or command_line. data type : String \n o  : Output type. file or command_line. data type : String \n \n Sample Input :  -d 100 -s 53.339428 -6.257664 -sr desc -sp id -i file -o command_line -w /Users/Kannan/Desktop";
 
 
 }
