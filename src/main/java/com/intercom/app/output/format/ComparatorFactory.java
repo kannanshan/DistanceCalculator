@@ -25,6 +25,8 @@ public class ComparatorFactory {
 			comparator =  new UserIDComparator(inputVO.isSortOrder());
 		if(inputVO.getSortParameter() == AppConstants.SORT_PARMETER.USER_NAME.getParameterId())
 			comparator =  new UserNameComparator(inputVO.isSortOrder());
+		if(inputVO.getSortParameter() == AppConstants.SORT_PARMETER.DISTANCE_FROM_SOURCE.getParameterId())
+			comparator =  new DistanceComparator(inputVO.isSortOrder());
 		return comparator;
 	}
 

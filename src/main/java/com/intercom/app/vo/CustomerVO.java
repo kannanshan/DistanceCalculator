@@ -8,6 +8,7 @@
 
 package com.intercom.app.vo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CustomerVO {
@@ -23,6 +24,9 @@ public class CustomerVO {
 
 	@JsonProperty("longitude")
 	private String longitude;
+	
+	@JsonIgnore
+	private double distanceFromSource;
 
 	/**
 	 * @return the latitute
@@ -87,5 +91,21 @@ public class CustomerVO {
 	public String toString() {
 		return "{\"user_id\":" + this.userId + ", \"name\":" + this.name+"\"}";
 	}
+
+	/**
+	 * @return the distanceFromSource
+	 */
+	public double getDistanceFromSource() {
+		return distanceFromSource;
+	}
+
+	/**
+	 * @param distanceFromSource the distanceFromSource to set
+	 */
+	public void setDistanceFromSource(double distanceFromSource) {
+		this.distanceFromSource = distanceFromSource;
+	}
+	
+	
 
 }

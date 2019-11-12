@@ -60,6 +60,7 @@ public class ApplicationBO {
 		for (CustomerVO customerVO : inputList) {
 			double distanceFromSource = CommonUtils.getDistanceByGreateCircle(sourceCoordinate, new Coordinates(
 					Double.valueOf(customerVO.getLatitude()), Double.valueOf(customerVO.getLongitude())));
+			customerVO.setDistanceFromSource(distanceFromSource);
 			if (distanceFromSource <= givenDistance) {
 				outputList.add(customerVO);
 			}

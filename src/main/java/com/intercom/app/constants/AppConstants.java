@@ -11,7 +11,7 @@ package com.intercom.app.constants;
 public class AppConstants {
 	
 	public static enum SORT_PARMETER {
-		USER_NAME("NAME", 2), USER_ID("ID", 1);
+		USER_NAME("NAME", 2), USER_ID("ID", 1), DISTANCE_FROM_SOURCE("DIS", 3);
 
 		private String parameterName;
 		private int parameterId;
@@ -55,6 +55,8 @@ public class AppConstants {
 		{
 			if(name.equalsIgnoreCase("name"))
 				return USER_NAME.getParameterId();
+			if(name.equalsIgnoreCase("dis"))
+				return DISTANCE_FROM_SOURCE.getParameterId();
 			return USER_ID.getParameterId();
 			
 		}
@@ -161,7 +163,7 @@ public class AppConstants {
 
 	}
 	
-	public static String HELP_MESSAGE = "\ndistcal, version 1.1 \n \n usage: java -jar distcal.jar [-h help]  [-d distance range in km] [-s latitude longitude] [-w working directory] [-so sorting order asc or desc] [-sp sorting parameter id or name] [-i inputtype file or command_line] [-o outputtype file or command_line] \n \n d  : *Distance range to be measured. The values are in Kilometers. data type : double \n s  : *Source coordinates. The source is generally provided using latitude and longtidue in degrees. data type : double \n w  : *Working directory.data type : String \n so : Sorting order. asc or desc. data type : String \n sp : Sorting parameter. id or name. data type : String \n i  : Input type. file or command_line. data type : String \n o  : Output type. file or command_line. data type : String \n \n  * : Mandatory Parameters \n\n Sample Input :  java -jar distcal.jar -d 100 -s 53.339428 -6.257664 -so desc -sp id -i file -o command_line -w /Users/Kannan/Desktop\n";
+	public static String HELP_MESSAGE = "\ndistcal, version 1.1 \n \n usage: java -jar distcal.jar [-h help]  [-d distance range in km] [-s latitude longitude] [-w working directory] [-so sorting order asc or desc] [-sp sorting parameter id or name or dis] [-i inputtype file or command_line] [-o outputtype file or command_line] \n \n d  : *Distance range to be measured. The values are in Kilometers. data type : double \n s  : *Source coordinates. The source is generally provided using latitude and longtidue in degrees. data type : double \n w  : *Working directory.data type : String \n so : Sorting order. asc or desc. data type : String \n sp : Sorting parameter. id or name or dis (distance from source). data type : String \n i  : Input type. file or command_line. data type : String \n o  : Output type. file or command_line. data type : String \n \n  * : Mandatory Parameters \n\n Sample Input :  java -jar distcal.jar -d 100 -s 53.339428 -6.257664 -so desc -sp id -i file -o command_line -w /Users/Kannan/Desktop\n";
 
 
 }
