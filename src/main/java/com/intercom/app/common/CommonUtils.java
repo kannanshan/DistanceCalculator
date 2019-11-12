@@ -12,6 +12,12 @@ import com.intercom.app.vo.Coordinates;
 
 public class CommonUtils {
 	
+	/**
+	 * Multiplying the result with 96.5 to convert the degree to km.
+	 * @param source
+	 * @param destination
+	 * @return
+	 */
 	public static double getDistanceByGreateCircle(Coordinates source, Coordinates destination) { 
         double x1 = Math.toRadians(source.getLongitute());
         double y1 = Math.toRadians(source.getLatitute());

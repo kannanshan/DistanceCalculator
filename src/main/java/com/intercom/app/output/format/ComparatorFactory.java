@@ -8,11 +8,24 @@
 
 package com.intercom.app.output.format;
 
+import com.intercom.app.constants.AppConstants;
+import com.intercom.app.vo.InputVO;
+
 public class ComparatorFactory {
 	
-	public static CustomComparator getComparatorObject()
+	/**
+	 * 
+	 * @param inputVO
+	 * @return
+	 */
+	public static CustomComparator getComparatorObject(InputVO inputVO)
 	{
-		return new UserNameComparator(false);
+		CustomComparator comparator = null;
+		if(inputVO.getSortParameter() == AppConstants.SORT_PARMETER.USER_ID.getParameterId())
+			comparator =  new UserIDComparator(inputVO.isSortOrder());
+		if(inputVO.getSortParameter() == AppConstants.SORT_PARMETER.USER_NAME.getParameterId())
+			comparator =  new UserNameComparator(inputVO.isSortOrder());
+		return comparator;
 	}
 
 }

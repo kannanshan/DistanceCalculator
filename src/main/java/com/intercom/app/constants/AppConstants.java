@@ -9,6 +9,57 @@
 package com.intercom.app.constants;
 
 public class AppConstants {
+	
+	public static enum SORT_PARMETER {
+		USER_NAME("NAME", 2), USER_ID("ID", 1);
+
+		private String parameterName;
+		private int parameterId;
+
+		private SORT_PARMETER(String parameterName, int parameterId) {
+			this.parameterName = parameterName;
+			this.parameterId = parameterId;
+		}
+
+		/**
+		 * @return the parameterName
+		 */
+		public String getParameterName() {
+			return parameterName;
+		}
+
+		/**
+		 * @param parameterName
+		 *            the parameterName to set
+		 */
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		/**
+		 * @return the parameterId
+		 */
+		public int getParameterId() {
+			return parameterId;
+		}
+
+		/**
+		 * @param parameterId
+		 *            the parameterId to set
+		 */
+		public void setParameterId(int parameterId) {
+			this.parameterId = parameterId;
+		}
+		
+		public static int getParameterId(String name)
+		{
+			if(name.equalsIgnoreCase("name"))
+				return USER_NAME.getParameterId();
+			return USER_ID.getParameterId();
+			
+		}
+
+	}
 
 	public static enum READER_TYPE {
 		FILE("FILE", 1), COMMAND_LINE("COMMAND_LINE", 2);
@@ -49,6 +100,13 @@ public class AppConstants {
 		 */
 		public void setReaderId(int readerId) {
 			this.readerId = readerId;
+		}
+		
+		public static int getReaderId(String name)
+		{
+			if(name.equalsIgnoreCase("file"))
+				return FILE.getReaderId();
+			return COMMAND_LINE.getReaderId();
 		}
 
 	}
@@ -92,6 +150,13 @@ public class AppConstants {
 		 */
 		public void setWriterId(int writerId) {
 			this.writerId = writerId;
+		}
+		
+		public static int getWriterId(String name)
+		{
+			if(name.equalsIgnoreCase("file"))
+				return FILE.getWriterId();
+			return COMMAND_LINE.getWriterId();
 		}
 
 	}

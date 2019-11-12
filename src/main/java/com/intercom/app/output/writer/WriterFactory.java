@@ -15,6 +15,11 @@ import com.intercom.app.input.reader.Reader;
 
 public class WriterFactory {
 	
+	/**
+	 * 
+	 * @param readerId
+	 * @return
+	 */
 	public static Writer getWriterObject(int readerId)
 	{
 		if(readerId == AppConstants.WRITER_TYPE.FILE.getWriterId())

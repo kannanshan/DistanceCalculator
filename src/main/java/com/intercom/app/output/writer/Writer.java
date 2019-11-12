@@ -8,14 +8,17 @@
 
 package com.intercom.app.output.writer;
 
+import java.io.IOException;
 import java.util.List;
 
+import com.intercom.app.common.InvalidInputException;
 import com.intercom.app.vo.CustomerVO;
+import com.intercom.app.vo.InputVO;
 
 public abstract class Writer {
 
-	public abstract void writeOutput(List<CustomerVO> outputList) throws Exception;
+	public abstract void writeOutput(List<CustomerVO> outputList,InputVO inputVO) throws InvalidInputException,IOException;
 	
-	public abstract void writeOutput(String message);
+	public abstract void writeOutput(String message,InputVO inputVO) throws InvalidInputException,IOException;
 
 }

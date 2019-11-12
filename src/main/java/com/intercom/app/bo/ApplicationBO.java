@@ -8,11 +8,13 @@
 
 package com.intercom.app.bo;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import com.intercom.app.common.CommonUtils;
+import com.intercom.app.common.InvalidInputException;
 import com.intercom.app.input.reader.CommandLineReader;
 import com.intercom.app.input.reader.Reader;
 import com.intercom.app.input.reader.ReaderFactory;
@@ -21,27 +23,37 @@ import com.intercom.app.output.writer.Writer;
 import com.intercom.app.output.writer.WriterFactory;
 import com.intercom.app.vo.Coordinates;
 import com.intercom.app.vo.CustomerVO;
+import com.intercom.app.vo.InputVO;
 
 public class ApplicationBO {
 
-	public List<CustomerVO> getCustomerList() throws Exception {
+	/**
+	 * 
+	 * @param inputVO
+	 * @return
+	 * @throws Exception
+	 */
+	public List<CustomerVO> getCustomerList(InputVO inputVO) throws InvalidInputException,IOException {
 		Writer writer = null;
 		List<CustomerVO> outputList = null;
 		List<CustomerVO> inputList = null;
-		try {
-			writer = WriterFactory.getWriterObject(1);
-			Reader reader = ReaderFactory.getReaderObject(1);
-			inputList = reader.readInput();
-			outputList = getValidCustomerList(inputList, new Coordinates(53.339428, -6.257664), 100);
-			OutputFormatter formatter = new OutputFormatter();
-			formatter.format(outputList);
-			writer.writeOutput(outputList);
-		} catch (Exception ex) {
-			writer.writeOutput(ex.getMessage());
-		}
+		writer = WriterFactory.getWriterObject(inputVO.getOutputType());
+		Reader reader = ReaderFactory.getReaderObject(inputVO.getInputType());
+		inputList = reader.readInput(inputVO);
+		outputList = getValidCustomerList(inputList, inputVO.getSourceCoordinates(), inputVO.getDistanceRange());
+		OutputFormatter formatter = new OutputFormatter();
+		formatter.format(outputList, inputVO);
+		writer.writeOutput(outputList, inputVO);
 		return outputList;
 	}
 
+	/**
+	 * 
+	 * @param inputList
+	 * @param sourceCoordinate
+	 * @param givenDistance
+	 * @return
+	 */
 	private List<CustomerVO> getValidCustomerList(List<CustomerVO> inputList, Coordinates sourceCoordinate,
 			double givenDistance) {
 		List<CustomerVO> outputList = new ArrayList();

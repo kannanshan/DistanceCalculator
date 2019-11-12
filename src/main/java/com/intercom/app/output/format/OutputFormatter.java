@@ -13,11 +13,17 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.intercom.app.vo.CustomerVO;
+import com.intercom.app.vo.InputVO;
 
 public class OutputFormatter {
 
-	public void format(List<CustomerVO> outputList) {
-		CustomComparator comparator = ComparatorFactory.getComparatorObject();
+	/**
+	 * 
+	 * @param outputList
+	 * @param inputVO
+	 */
+	public void format(List<CustomerVO> outputList,InputVO inputVO) {
+		CustomComparator comparator = ComparatorFactory.getComparatorObject(inputVO);
 		Collections.sort(outputList, comparator);
 	}
 
