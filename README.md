@@ -8,7 +8,7 @@ The locations are specified using the latitude and longitude.
 ## Features : 
 
 1. The application can communicate with the user using files or through command line interface. Users can specify it via parameters. Users can provide the input via files and receive the output via commandline interface and vice versa is also possible. The code can be extended to support to any other input and output types.
-2. The output can be sorted using different parameters like, user_id, name and distance of the customer from source.
+2. The output can be sorted using different parameters like, user_id, name and distance of the customer from source using -so and -sp parameter .
 3. All the parameters can be sorted either ascending or descending order. The users can specify them separately. 
 4. You can use -h command for help which will provide you all the parameters and their usecase.
 
@@ -34,6 +34,7 @@ The locations are specified using the latitude and longitude.
 3. We expect a file named input.txt containing the customers information in json format inside the directory. File with sample data is already present in the directory.
 4. The output will be written to a file named output.txt in the same directory.
 5. If you want the input and output file from a different directory , you can create a directory with input.txt and output.txt and set the working directory using the -w command.
+6. If you want to use the command line for input and output, you can set the same using the -i and -o commands.
 	
 	
 ## Synopsis : 
