@@ -54,8 +54,8 @@ public class ApplicationBO {
 	 * @param givenDistance
 	 * @return
 	 */
-	private List<CustomerVO> getValidCustomerList(List<CustomerVO> inputList, Coordinates sourceCoordinate,
-			double givenDistance) {
+	public List<CustomerVO> getValidCustomerList(List<CustomerVO> inputList, Coordinates sourceCoordinate,
+			Double givenDistance) {
 		List<CustomerVO> outputList = new ArrayList();
 		for (CustomerVO customerVO : inputList) {
 			double distanceFromSource = CommonUtils.getDistanceByGreateCircle(sourceCoordinate, new Coordinates(

@@ -28,4 +28,11 @@ public class CommonUtils {
         angle1 = Math.toDegrees(angle1)*96.5;
         return angle1;
     }
+	
+	public static void main(String args[])
+	{
+		Coordinates source = new Coordinates(53.32055555555556, -1.7297222222222221);
+		Coordinates destination = new Coordinates(53.31861111111111, -1.6997222222222223);
+		System.out.println(CommonUtils.getDistanceByGreateCircle(source, destination));
+	}
 }

@@ -63,7 +63,11 @@ public class FileWriter extends Writer {
 				writer.write(message);
 				writer.newLine();
 				writer.close();
+			} catch (FileNotFoundException e) {
+				throw new InvalidInputException(
+						"Output file not found. Please check the working directory value is proper");
 			} finally {
+				if(writer!=null)
 				writer.close();
 			}
 		}
