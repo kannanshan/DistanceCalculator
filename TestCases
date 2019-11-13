@@ -67,4 +67,10 @@ Success case :
 		Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -so desc -sp dist
 		Output : {"user_id":12, "name":Christina McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":2, "name":Ian McArdle"}
 
-
+	8. Output the results in Command line. 
+	   Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -o command_line
+	   Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
+	   
+	9. Input from Command line and output to file. 
+	   Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -o command_line -i file
+	   Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
