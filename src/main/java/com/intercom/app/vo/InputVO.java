@@ -8,6 +8,7 @@
 
 package com.intercom.app.vo;
 
+import com.intercom.app.common.InvalidInputException;
 import com.intercom.app.constants.AppConstants;
 
 public class InputVO {
@@ -54,7 +55,7 @@ public class InputVO {
 	 * @param sourceCoordinates
 	 *            the sourceCoordinates to set
 	 */
-	public void setSourceCoordinates(double latitude, double longitude) {
+	public void setSourceCoordinates(double latitude, double longitude) throws InvalidInputException{
 		this.sourceCoordinates = new Coordinates(latitude, longitude);
 	}
 

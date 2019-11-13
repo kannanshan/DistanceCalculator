@@ -8,9 +8,15 @@
 
 package com.intercom.app.vo;
 
+import com.intercom.app.common.InvalidInputException;
+
 public class Coordinates {
 
-	public Coordinates(double latitute, double longitute) {
+	public Coordinates(double latitute, double longitute) throws InvalidInputException {
+		if (latitute > 90 || latitute < -90)
+			throw new InvalidInputException("Latitude value should be in the range -90 to 90");
+		if (longitute > 180 || longitute < -180)
+			throw new InvalidInputException("longitude value should be in the range -180 to 180");
 		this.latitute = latitute;
 		this.longitute = longitute;
 	}

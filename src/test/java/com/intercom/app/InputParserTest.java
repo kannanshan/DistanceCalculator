@@ -12,6 +12,8 @@ public class InputParserTest {
 	protected void setUp() {
 
 	}
+	
+	
 
 	@Test
 	public void testInputParserValidInput1() throws Exception {
@@ -70,6 +72,15 @@ public class InputParserTest {
 		}
 	 
 	 @Test(expected = InvalidInputException.class)
+	 public void testInputParserValidInput7() throws InvalidInputException {
+			InputParser inputParser = new InputParser();
+			String s = "-d 10 -s 190 200";
+			String[] args = null;
+			args = s.split(" ");
+			inputParser.parseAndGetInputVO(args);
+		}
+	 
+	 @Test(expected = InvalidInputException.class)
 	 public void testValidateInput1() throws InvalidInputException
 	 {
 		 InputVO inputVO = new InputVO();
@@ -86,6 +97,8 @@ public class InputParserTest {
 		 InputParser inputParser = new InputParser();
 		 inputParser.validateInput(inputVO);
 	 }
+	 
+	 
 	 
 	 @Test
 	 public void testValidateInput3() throws InvalidInputException

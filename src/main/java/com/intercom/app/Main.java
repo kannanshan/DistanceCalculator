@@ -21,7 +21,7 @@ public class Main {
 	 */
 	public static void main(String args[]) {
 		try {
-			 String s = "-d 100 -s 53.339428 -6.257664";
+			 String s = "-d 100 -s 190 200";
 			//String s = "-h";
 			args = s.split(" ");
 			if (args.length == 1 && args[0].equalsIgnoreCase("-h"))

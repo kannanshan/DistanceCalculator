@@ -55,7 +55,7 @@ public class ApplicationBO {
 	 * @return
 	 */
 	public List<CustomerVO> getValidCustomerList(List<CustomerVO> inputList, Coordinates sourceCoordinate,
-			Double givenDistance) {
+			Double givenDistance) throws InvalidInputException{
 		List<CustomerVO> outputList = new ArrayList();
 		for (CustomerVO customerVO : inputList) {
 			double distanceFromSource = CommonUtils.getDistanceByGreateCircle(sourceCoordinate, new Coordinates(

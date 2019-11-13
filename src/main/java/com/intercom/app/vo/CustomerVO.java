@@ -10,6 +10,7 @@ package com.intercom.app.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.intercom.app.common.InvalidInputException;
 
 public class CustomerVO {
 
@@ -39,7 +40,7 @@ public class CustomerVO {
 	 * @param latitute
 	 *            the latitute to set
 	 */
-	public void setLatitude(String latitude) {
+	public void setLatitude(String latitude){
 		this.latitude = latitude;
 	}
 
@@ -84,7 +85,7 @@ public class CustomerVO {
 	 * @param longitude
 	 *            the longitude to set
 	 */
-	public void setLongitude(String longitude) {
+	public void setLongitude(String longitude){
 		this.longitude = longitude;
 	}
 
