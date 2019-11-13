@@ -22,14 +22,15 @@ The locations are specified using the latitude and longitude.
 1. Download the github code from the repo https://github.com/kannanshan/DistanceCalculator.git
 2. Move to the repository folder with the following command . "cd DistanceCalculator"
 3. Build the project using maven. Output will be a jar file located inside the target folder . "mvn clean install"
-4. Either you can execute the jar in the same folder or move to separate folder.
+4. Copy the jar file from target directory to the current directory. "cp target/distancecalculator.jar ."
 		
 ## Execution : 
 
 1. Once installation is done. We are ready to execute the application.
-2. Command to execute : java -jar distancecalculator.jar -d 100 -s 53.339428, -6.257664.
+2. Command to execute : java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664.
 3. We expect a file named input.txt containing the customers information in json format inside the directory.
 4. The output will be written to a file named output.txt in the same directory.
+5. If you want the input and output file from a different directory , you can create a directory with input.txt and output.txt and set the working directory using the -w command.
 	
 	
 ## Synopsis : 
