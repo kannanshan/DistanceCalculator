@@ -43,7 +43,10 @@ public class InputParser {
 		} catch (NumberFormatException e) {
 			throw new InvalidInputException(
 					"Make sure the coordinates and distance parameter are Numbers. Check the help menu using the -h command to understand the inputs.");
-		} catch (Exception e) {
+		} 
+		catch (InvalidInputException e) {
+			throw e;
+		}catch (Exception e) {
 			throw new InvalidInputException("Check the help menu using the -h command to understand the inputs.");
 		}
 		return inputVO;

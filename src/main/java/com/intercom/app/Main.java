@@ -21,9 +21,9 @@ public class Main {
 	 */
 	public static void main(String args[]) {
 		try {
-			 String s = "-d 100 -s 190 200";
+			// String s = "-d 200 -s 53.339428 -6.257664 -sp name -so asc -o command_line";
 			//String s = "-h";
-			args = s.split(" ");
+			//args = s.split(" ");
 			if (args.length == 1 && args[0].equalsIgnoreCase("-h"))
 				System.out.println(AppConstants.HELP_MESSAGE);
 			else {
